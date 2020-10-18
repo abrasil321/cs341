@@ -5,3 +5,6 @@ table{
     align-items: center;
     justify-content: start;
 }
+td{
+    flex-grow: 1;
+}
