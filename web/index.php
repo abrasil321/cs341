@@ -22,12 +22,15 @@ session_start();
     <div>
         Making your dream body become true
     </div>
-        User's ID:<input placeholder="00000" type="number"><br>
+        User's ID:<input placeholder="00000" type="number" id="id"><br>
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
-    <button type="button" onclick="">Search</button>
-    <button type="button" onclick="list()">Display List</button>
+    <button type="button" onclick="searchById()">Search</button>
+
     <div>
+    <p id="dispId"></p>
+    <p id="dispfirst"></p>
+    <p id="displast"></p>
     <?php
                             try 
                             {
