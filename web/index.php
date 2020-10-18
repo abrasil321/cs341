@@ -19,7 +19,7 @@ session_start();
         BcomeFit
     </header>
     <hr>
-    <div>
+    <div id="head">
         Making your dream body become true
     </div>
     <p id="dispId"></p>

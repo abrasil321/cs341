@@ -9,3 +9,13 @@ td{
     flex-grow: 1;
     text-align: center;
 }
+header{
+    font-size: larger;
+    justify-content: center;
+    font-family: cursive;
+}
+div.head{
+    background-color: rgb(40, 40, 255);
+    justify-content: center;
+    color: white;
+}
