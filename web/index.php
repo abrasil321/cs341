@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+$_SESSION["user_id"] = "";
+$_SESSION["first_name"] = "";
+$_SESSION["last_name"] = "";
 ?>
 <?php
     require "dbConnect.php";
