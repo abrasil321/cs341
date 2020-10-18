@@ -14,7 +14,7 @@ header{
     justify-content: center;
     font-family: cursive;
 }
-div.head{
+#head{
     background-color: rgb(40, 40, 255);
     justify-content: center;
     color: white;
