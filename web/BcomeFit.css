@@ -3,10 +3,5 @@ table{
     background-color: rgb(190, 190, 190);
     display: flexbox;
     align-items: center;
-    justify-content: center;
-}
-td{
-    display: flexbox;
-    align-items: flex-end;
-    justify-content: end;
+    justify-content: start;
 }
