@@ -27,7 +27,7 @@ session_start();
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
     <button type="button" onclick="hiding()">Search</button>
-    <div id="list">
+    <div id="list" hidden>
     <?php
                             try 
                             {
@@ -44,19 +44,19 @@ session_start();
                                     $first_name = $row['firstname'];
                                     $last_name = $row['lastname'];
 
-                                    $_SESSION["user_id"] = $user_id;
-                                    $_SESSION["first_name"] = $first_name;
-                                    $_SESSION["last_name"] = $last_name;
-
-                                    echo  $_SESSION["user_id"] . "<br>";
-                                    echo "Session " . $_SESSION["first_name"] . "<br>";
-                                    echo "Session " . $_SESSION["last_name"] . "<br>";
-
                                     echo "<tr>
                                             <td> $user_id</td>
                                             <td> $first_name</td>
                                             <td> $last_name</td>
                                         </tr>";
+
+                                    // $_SESSION["user_id"] = $user_id;
+                                    // $_SESSION["first_name"] = $first_name;
+                                    // $_SESSION["last_name"] = $last_name;
+
+                                    // echo  $_SESSION["user_id"] . "<br>";
+                                    // echo "Session " . $_SESSION["first_name"] . "<br>";
+                                    // echo "Session " . $_SESSION["last_name"] . "<br>";
                                     
                                 }
                             } 
