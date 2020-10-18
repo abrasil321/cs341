@@ -52,7 +52,7 @@ session_start();
                                     $_SESSION["first_name"] = $first_name;
                                     $_SESSION["last_name"] = $last_name;
 
-                                    echo "Session " . $_SESSION["user_id"] . "<br>";
+                                    echo  $_SESSION["user_id"] . "<br>";
                                     echo "Session " . $_SESSION["first_name"] . "<br>";
                                     echo "Session " . $_SESSION["last_name"] . "<br>";
 
