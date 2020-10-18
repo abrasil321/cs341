@@ -7,6 +7,6 @@ table{
 }
 td{
     display: flexbox;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: end;
 }
