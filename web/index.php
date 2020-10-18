@@ -22,7 +22,9 @@ session_start();
     <div>
         Making your dream body become true
     </div>
-    <p id="dispId"></p>
+    <?php
+        echo '<p id="dispId"></p>';
+    ?>
         User's ID:<input placeholder="00000" type="number" id="id"><br>
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
