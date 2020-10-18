@@ -1,5 +1,5 @@
 table{
-    width: 70%;
+    width: 99%;
     background-color: rgb(230, 227, 227);
     display: flexbox;
     align-items: center;
@@ -10,12 +10,20 @@ td{
     text-align: center;
 }
 header{
-    font-size: larger;
+    font-size: 250%;
     justify-content: center;
     font-family: cursive;
+    text-align: center;
+    
 }
 #head{
     background-color: rgb(40, 40, 255);
     justify-content: center;
     color: white;
+    text-align: center;
+}
+#list{
+    margin-left: 10%;
+    margin-right: 10% 
+    
 }
