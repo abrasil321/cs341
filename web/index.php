@@ -1,7 +1,7 @@
 <?php
     require "dbConnect.php";
     $db = get_db();
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,20 +23,33 @@
     <button type="button" onclick="">Search</button>
     <div>
         <?php
-
-            try {
+            try 
+            {
                 $statement = $db->prepare('Select * FROM theuser');
                 $statement->execute();
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                $first_name = $row['firstname'];
-                $last_name = $row['lastname'];
-                echo "<p> $first_name</p>";
-                echo "<p> $last_name</p>";
+                    $user_id = $row['user_id'];
+                    $first_name = $row['firstname'];
+                    $last_name = $row['lastname'];
+
+                    echo "<table>
+                        <tr>
+                            <th>User ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                        <tr>
+                            <td> $user_id</td>
+                            <td> $first_name</td>
+                            <td> $last_name</td>
+                        </tr>";
+                    
                 }
-            } catch (Exception $ex) {
+            } 
+            catch (Exception $ex) 
+            {
                 echo "$ex";
             }
-
         ?>
     </div>
 </body>
