@@ -5,3 +5,8 @@ table{
     align-items: center;
     justify-content: center;
 }
+td{
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}
