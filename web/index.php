@@ -23,7 +23,7 @@
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
     <button type="button" onclick="">Search</button>
-    <button type="button" onclick="list();">Display List</button>
+    <button type="button" onclick="list()">Display List</button>
     <div>
         <p id="list"></p>
     </div>
