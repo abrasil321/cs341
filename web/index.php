@@ -26,7 +26,7 @@ session_start();
         User's ID:<input placeholder="00000" type="number" id="id"><br>
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
-    <button type="button" onclick="hiding()">Search</button>
+    <button type="button" onclick="hiding()">Display All Users</button>
     <div id="list" hidden>
     <?php
                             try 
