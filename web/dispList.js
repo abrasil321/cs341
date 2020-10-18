@@ -9,10 +9,3 @@ function hiding() {
       document.getElementById('bt').innerHTML = "Hide All Users";
     }
   }
-
-function search(){
-    let id = document.getElementById('id').value;
-    // if (id == $_SESSION["user_id"]){
-      document.getElementById("search").innerHTML = id;
-    // }
-}

@@ -27,7 +27,6 @@ session_start();
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
     <button id="bt" type="button" onclick="hiding()">Display All Users</button>
-    <button type="button" onclick="search()">Search User</button>
     <div id="list" hidden>
     <?php
                             try 
@@ -51,13 +50,13 @@ session_start();
                                             <td> $last_name</td>
                                         </tr>";
 
-                                    $_SESSION["user_id"] = $user_id;
-                                    $_SESSION["first_name"] = $first_name;
-                                    $_SESSION["last_name"] = $last_name;
+                                    // $_SESSION["user_id"] = $user_id;
+                                    // $_SESSION["first_name"] = $first_name;
+                                    // $_SESSION["last_name"] = $last_name;
 
-                                    echo  $_SESSION["user_id"] . "<br>";
-                                    echo "Session " . $_SESSION["first_name"] . "<br>";
-                                    echo "Session " . $_SESSION["last_name"] . "<br>";
+                                    // echo  $_SESSION["user_id"] . "<br>";
+                                    // echo "Session " . $_SESSION["first_name"] . "<br>";
+                                    // echo "Session " . $_SESSION["last_name"] . "<br>";
                                     
                                 }
                             } 
@@ -67,7 +66,6 @@ session_start();
                             }
                         ?>
     </div>
-    <div id="search"></div>
 
 </body>
 </html>
