@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="BcomeFit.css">
+    <script src="dispList.js"></script>
 </head>
 <body>
     <header>
@@ -22,36 +23,9 @@
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
     <button type="button" onclick="">Search</button>
+    <button type="button" onclick="list();">Display List</button>
     <div>
-        <?php
-            try 
-            {
-                $statement = $db->prepare('Select * FROM theuser');
-                $statement->execute();
-                echo "<table>
-                        <tr>
-                            <th>User ID</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                        </tr>";
-                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) {
-                    $user_id = $row['user_id'];
-                    $first_name = $row['firstname'];
-                    $last_name = $row['lastname'];
-
-                    echo "<tr>
-                            <td> $user_id</td>
-                            <td> $first_name</td>
-                            <td> $last_name</td>
-                        </tr>";
-                    
-                }
-            } 
-            catch (Exception $ex) 
-            {
-                echo "$ex";
-            }
-        ?>
+        <p id="list"></p>
     </div>
 </body>
 </html>
