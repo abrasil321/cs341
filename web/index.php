@@ -23,6 +23,7 @@ session_start();
         Making your dream body become true
     </div>
     <p id="dispId"></p>
+    <?php echo $_SESSION["user_id"]; ?>
         User's ID:<input placeholder="00000" type="number" id="id"><br>
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
