@@ -1,9 +1,5 @@
 <?php
 session_start();
-
-$_SESSION["user_id"] = "";
-$_SESSION["first_name"] = "";
-$_SESSION["last_name"] = "";
 ?>
 <?php
     require "dbConnect.php";
@@ -27,16 +23,11 @@ $_SESSION["last_name"] = "";
         Making your dream body become true
     </div>
     <p id="dispId"></p>
-    <?php echo $_SESSION["user_id"]; ?>
         User's ID:<input placeholder="00000" type="number" id="id"><br>
         Use's First Name:<input placeholder="James" type="text"><br>
         Use's Last Name:<input placeholder="Bond" type="text"><br>
     <button type="button" onclick="searchById()">Search</button>
-
-    <div>
-    
-    <p id="dispfirst"></p>
-    <p id="displast"></p>
+    <div id="list">
     <?php
                             try 
                             {

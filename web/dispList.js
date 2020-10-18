@@ -12,3 +12,12 @@ function searchById(){
 }
 
 // '<?php echo "Session" . $_SESSION["user_id"] . "<br>"; ?>'
+
+function hiding() {
+    var x = document.getElementById("list");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
