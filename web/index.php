@@ -1,4 +1,7 @@
 <?php
+session_start();
+?>
+<?php
     require "dbConnect.php";
     $db = get_db();
 ?>
@@ -40,6 +43,14 @@
                                     $user_id = $row['user_id'];
                                     $first_name = $row['firstname'];
                                     $last_name = $row['lastname'];
+
+                                    $_SESSION["user_id"] = $user_id;
+                                    $_SESSION["first_name"] = $first_name;
+                                    $_SESSION["last_name"] = $last_name;
+
+                                    echo "Session " . $_SESSION["user_id"];
+                                    echo "Session " . $_SESSION["first_name"];
+                                    echo "Session " . $_SESSION["last_name"];
 
                                     echo "<tr>
                                             <td> $user_id</td>
