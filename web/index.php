@@ -52,6 +52,14 @@ session_start();
                     $ids = array();
                     array_push($ids, $_SESSION["user_id"]);
                     print_r($ids);
+
+                    $fnames = array();
+                    array_push($ids, $_SESSION["first_name"]);
+                    print_r($fnames);
+
+                    $lnames = array();
+                    array_push($ids, $_SESSION["last_name"]);
+                    print_r($lnames);
                 }
             } 
             catch (Exception $ex) 
