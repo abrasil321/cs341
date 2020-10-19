@@ -49,7 +49,7 @@ session_start();
                     $_SESSION["first_name"] = $first_name;
                     $_SESSION["last_name"] = $last_name;
                     
-                    $ids = ("");
+                    $ids = array();
                     array_push($ids, $_SESSION["user_id"]);
                     echo $ids;
                 }
