@@ -51,7 +51,7 @@ session_start();
                     
                     $ids = ("");
                     array_push($ids, $_SESSION["user_id"]);
-                    print_r($ids);
+                    echo $ids;
                 }
             } 
             catch (Exception $ex) 
