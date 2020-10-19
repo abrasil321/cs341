@@ -42,7 +42,7 @@ session_start();
         
         $ids = ("");
         array_push($ids, $_SESSION["user_id"]);
-        echo $ids;
+        print_r($ids);
 
     ?>
                            
