@@ -28,24 +28,37 @@ session_start();
         Use's Last Name:<input placeholder="Bond" type="text"><br>
     <button id="bt" type="button" onclick="hiding()">Display All Users</button>
     <div id="list" hidden>
-    <?php
-        require "list.php";
+        <?php
+            require "list.php";
+        ?>                    
+    </div>
+    <div id="search">
+        <?php
+            try 
+            {
+                $statement = $db->prepare('Select * FROM theuser');
+                $statement->execute();
+    
+                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
+                {
+                    $user_id = $row['user_id'];
+                    $first_name = $row['firstname'];
+                    $last_name = $row['lastname'];
 
-
-        $_SESSION["user_id"] = $user_id;
-        $_SESSION["first_name"] = $first_name;
-        $_SESSION["last_name"] = $last_name;
-
-        // echo  $_SESSION["user_id"] . "<br>";
-        // echo "Session " . $_SESSION["first_name"] . "<br>";
-        // echo "Session " . $_SESSION["last_name"] . "<br>";
-        
-        $ids = ("");
-        array_push($ids, $_SESSION["user_id"]);
-        print_r($ids);
-
-    ?>
-                           
+                    $_SESSION["user_id"] = $user_id;
+                    $_SESSION["first_name"] = $first_name;
+                    $_SESSION["last_name"] = $last_name;
+                    
+                    $ids = ("");
+                    array_push($ids, $_SESSION["user_id"]);
+                    print_r($ids);
+                }
+            } 
+            catch (Exception $ex) 
+            {
+                echo "$ex";
+            }
+        ?>        
     </div>
 
 </body>
