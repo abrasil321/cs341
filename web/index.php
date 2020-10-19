@@ -32,13 +32,17 @@ session_start();
         require "list.php";
 
 
-        // $_SESSION["user_id"] = $user_id;
-        // $_SESSION["first_name"] = $first_name;
-        // $_SESSION["last_name"] = $last_name;
+        $_SESSION["user_id"] = $user_id;
+        $_SESSION["first_name"] = $first_name;
+        $_SESSION["last_name"] = $last_name;
 
         // echo  $_SESSION["user_id"] . "<br>";
         // echo "Session " . $_SESSION["first_name"] . "<br>";
-        // echo "Session " . $_SESSION["last_name"] . "<br>";                        
+        // echo "Session " . $_SESSION["last_name"] . "<br>";
+        
+        $ids = ("");
+        array_push($ids, $_SESSION["user_id"]);
+        echo $ids;
 
     ?>
                            
