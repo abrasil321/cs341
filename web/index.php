@@ -53,7 +53,7 @@
                     
 
                     $ids = array();
-                    array_push($ids[$i], $_SESSION["user_id"]);
+                    array_push($ids[$i], $user_id);
                     print_r($ids);
                     echo "<br>";
 
