@@ -50,15 +50,15 @@
                     
                     $ids = array();
                     array_push($ids, $_SESSION["user_id"]);
-                    print_r($ids);
+                    print_r($ids."<br>");
 
                     $fnames = array();
                     array_push($ids, $_SESSION["first_name"]);
-                    print_r($fnames);
+                    print_r($fnames."<br>");
 
                     $lnames = array();
                     array_push($ids, $_SESSION["last_name"]);
-                    print_r($lnames);
+                    print_r($lnames."<br>");
                 }
             } 
             catch (Exception $ex) 
