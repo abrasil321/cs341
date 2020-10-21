@@ -57,12 +57,12 @@
                     echo "<br>";
 
                     $fnames = array();
-                    array_push($ids[$i], $_SESSION["first_name"]);
+                    array_push($fnames[$i], $_SESSION["first_name"]);
                     print_r($fnames);
                     echo "<br>";
 
                     $lnames = array();
-                    array_push($ids[$i], $_SESSION["last_name"]);
+                    array_push($lnames[$i], $_SESSION["last_name"]);
                     print_r($lnames);
                     echo "<br>";
 
