@@ -37,7 +37,8 @@
             {
                 $statement = $db->prepare('Select * FROM theuser');
                 $statement->execute();
-    
+                $i = 0;
+
                 while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
                 {
                     $user_id = $row['user_id'];
@@ -48,20 +49,24 @@
                     $_SESSION["first_name"] = $first_name;
                     $_SESSION["last_name"] = $last_name;
                     
+                    
+
                     $ids = array();
-                    array_push($ids, $_SESSION["user_id"]);
+                    array_push($ids[$i], $_SESSION["user_id"]);
                     print_r($ids);
                     echo "<br>";
 
                     $fnames = array();
-                    array_push($ids, $_SESSION["first_name"]);
+                    array_push($ids[$i], $_SESSION["first_name"]);
                     print_r($fnames);
                     echo "<br>";
 
                     $lnames = array();
-                    array_push($ids, $_SESSION["last_name"]);
+                    array_push($ids[$i], $_SESSION["last_name"]);
                     print_r($lnames);
                     echo "<br>";
+
+                    $i += 1;
                 }
             } 
             catch (Exception $ex) 
