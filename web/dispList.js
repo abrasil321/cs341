@@ -9,3 +9,14 @@ function hiding() {
       document.getElementById('bt').innerHTML = "Hide All Users";
     }
   }
+
+
+  function seach(){
+
+    var search_id = document.getElementById("id").value;
+    var search_fName = document.getElementById("fName").value;
+    var search_lName = document.getElementById("lName").value;
+
+    
+
+  }

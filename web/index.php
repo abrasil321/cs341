@@ -1,7 +1,6 @@
 <?php
-session_start();
-?>
-<?php
+    session_start();
+    
     require "dbConnect.php";
     $db = get_db();
 ?>
@@ -24,50 +23,50 @@ session_start();
     </div>
     <p id="dispId"></p>
         User's ID:<input placeholder="00000" type="number" id="id"><br>
-        Use's First Name:<input placeholder="James" type="text"><br>
-        Use's Last Name:<input placeholder="Bond" type="text"><br>
+        Use's First Name:<input placeholder="James" type="text" id="fName"><br>
+        Use's Last Name:<input placeholder="Bond" type="text" id="lName"><br>
     <button id="bt" type="button" onclick="hiding()">Display All Users</button>
     <div id="list" hidden>
         <?php
             require "list.php";
         ?>                    
     </div>
-    <!-- <div id="search">
+    <div id="search">
         <?php
-            // try 
-            // {
-            //     $statement = $db->prepare('Select * FROM theuser');
-            //     $statement->execute();
+            try 
+            {
+                $statement = $db->prepare('Select * FROM theuser');
+                $statement->execute();
     
-            //     while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
-            //     {
-            //         $user_id = $row['user_id'];
-            //         $first_name = $row['firstname'];
-            //         $last_name = $row['lastname'];
+                while ($row = $statement->fetch(PDO::FETCH_ASSOC)) 
+                {
+                    $user_id = $row['user_id'];
+                    $first_name = $row['firstname'];
+                    $last_name = $row['lastname'];
 
-            //         $_SESSION["user_id"] = $user_id;
-            //         $_SESSION["first_name"] = $first_name;
-            //         $_SESSION["last_name"] = $last_name;
+                    $_SESSION["user_id"] = $user_id;
+                    $_SESSION["first_name"] = $first_name;
+                    $_SESSION["last_name"] = $last_name;
                     
-            //         $ids = array();
-            //         array_push($ids, $_SESSION["user_id"]);
-            //         print_r($ids);
+                    $ids = array();
+                    array_push($ids, $_SESSION["user_id"]);
+                    print_r($ids);
 
-            //         $fnames = array();
-            //         array_push($ids, $_SESSION["first_name"]);
-            //         print_r($fnames);
+                    $fnames = array();
+                    array_push($ids, $_SESSION["first_name"]);
+                    print_r($fnames);
 
-            //         $lnames = array();
-            //         array_push($ids, $_SESSION["last_name"]);
-            //         print_r($lnames);
-            //     }
-            // } 
-            // catch (Exception $ex) 
-        //     {
-        //         echo "$ex";
-        //     }
-        // ?>        
-    </div> -->
+                    $lnames = array();
+                    array_push($ids, $_SESSION["last_name"]);
+                    print_r($lnames);
+                }
+            } 
+            catch (Exception $ex) 
+            {
+                echo "$ex";
+            }
+        ?>        
+    </div>
 
 </body>
 </html>
