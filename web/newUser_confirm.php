@@ -16,9 +16,7 @@
         Making your dream body become true
     </div>
     <form method="$_POST" action="newUser_confirm.php">
-        Enter First Name: <input type="text" name="fname" required><br>
-        Enter Last Name: <input type="text" name="lname" require><br>
-        Enter Email Address: <input type="email" name="emaill" require>
+
 
 
     </form>
