@@ -26,6 +26,7 @@
         <div id="two">Choose your goal: <input type="radio" name="radio" id="Cutting" onchange="checkBox()">Cutting
                           <input type="radio" name="radio" id="Maintaining"> Maintaining
                           <input type="radio" name="radio" id="Bulking"> Bulking</div><br>
+                          <br>
         <button type="submit">Submit</button>
         <br>
     </form>
