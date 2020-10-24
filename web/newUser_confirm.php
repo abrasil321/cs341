@@ -31,8 +31,6 @@
         echo $emailAddress . "<br>";
         echo $goal . "<br>";
         echo $description . "<br>";
-
-
     ?>
 
 </body>

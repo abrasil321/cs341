@@ -18,19 +18,32 @@
     <br>
     <br>
     <div id="mess">Please Complete The Form Bellow</div>
-    <form method="$_POST" action="newUser_confirm.php">
+    <form action="newUser.php" method="$_POST">
         <br>
         <div id="two">Enter First Name: <input type="text" name="fname" placeholder="James" required></div><br>
         <div id="two">Enter Last Name: <input type="text" name="lname" placeholder="Bond" require></div><br>
         <div id="two">Enter Email Address: <input type="email" name="emaill" placeholder="007@example.com" require></div><br>
-        <div id="two">Choose your goal: <input type="radio" name="radio" id="Cutting"> Cutting
-                          <input type="radio" name="radio" id="Maintaining"> Maintaining
-                          <input type="radio" name="radio" id="Bulking"> Bulking</div><br>
+        <div id="two">Choose your goal: <input type="radio" name="radio" value="Cutting"> Cutting
+                          <input type="radio" name="radio" value="Maintaining"> Maintaining
+                          <input type="radio" name="radio" value="Bulking"> Bulking</div><br>
         <div id="two">Description: <textarea name="textArea" placeholder="Describe your personal goal..."></textarea></div>
         <br>
         <br>
         <button type="submit">Submit</button>
         <br>
     </form>
+    <?php
+        $firstName = $_POST["fname"];
+        $lastName = $_POST["lname"];
+        $emailAddress = $_POST["emaill"];
+        $goal = $_POST["radio"];
+        $description = $_POST["textArea"];
+
+        echo $firstName . "<br>";
+        echo $lastName . "<br>";
+        echo $emailAddress . "<br>";
+        echo $goal . "<br>";
+        echo $description . "<br>";
+    ?>
 </body>
 </html>
