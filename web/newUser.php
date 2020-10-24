@@ -54,7 +54,7 @@
             try 
             {
                 $statement = $db->prepare('INSERT INTO note(user_id, firstname, lastname, emailaddress)
-                                VALUES(serial, $firstName, $last_name, $emailAddress);');
+                                VALUES(11, $firstName, $last_name, $emailAddress);');
                 $statement->execute();
                 
             } 
