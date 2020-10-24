@@ -49,5 +49,9 @@ form{
     justify-content: center;
     text-align: center;
     font-size: 120%;
-    margin: 10%;
+    margin: 1%;
+}
+button{
+    width: 70%;
+    font-size: large;
 }

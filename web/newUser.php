@@ -27,6 +27,7 @@
                           <input type="radio" name="radio" id="Maintaining"> Maintaining
                           <input type="radio" name="radio" id="Bulking"> Bulking</div><br>
         <button type="submit">Submit</button>
+        <br>
     </form>
 </body>
 </html>
