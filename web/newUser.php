@@ -40,11 +40,11 @@
         $description = $_GET["textArea"];
 
         echo '<div id="disp"> The Following User Was Added to Our DataBase <br>';
-        echo '<br><div id="two">' . $firstName . '<br>';
-        echo '<div id="two">' . $lastName . '<br>';
-        echo '<div id="two">' . $emailAddress . '<br>';
-        echo '<div id="two">' . $goal . '<br>';
-        echo '<div id="two">' . $description . '<br></div>';
+        echo '<br><div id="two">' . $firstName . '</div><br>';
+        echo '<div id="two">' . $lastName . '</div><br>';
+        echo '<div id="two">' . $emailAddress . '</div><br>';
+        echo '<div id="two">' . $goal . '</div><br>';
+        echo '<div id="two">' . $description . '<br></div></div>';
     ?>
 </body>
 </html>
