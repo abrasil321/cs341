@@ -39,11 +39,12 @@
         $goal = $_GET["radio"];
         $description = $_GET["textArea"];
 
-        echo $firstName . "<br>";
-        echo $lastName . "<br>";
-        echo $emailAddress . "<br>";
-        echo $goal . "<br>";
-        echo $description . "<br>";
+        echo '<div id="disp"> The Following User Was Added to Our DataBase <br>';
+        echo '<br><div id="two">' . $firstName . '<br>';
+        echo '<div id="two">' . $lastName . '<br>';
+        echo '<div id="two">' . $emailAddress . '<br>';
+        echo '<div id="two">' . $goal . '<br>';
+        echo '<div id="two">' . $description . '<br></div>';
     ?>
 </body>
 </html>
