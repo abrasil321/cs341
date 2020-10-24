@@ -32,18 +32,22 @@
         <button type="submit">Submit</button>
         <br>
     </form>
-    <?php
-        $firstName = $_GET["fname"];
-        $lastName = $_GET["lname"];
-        $emailAddress = $_GET["emaill"];
-        $goal = $_GET["radio"];
-        $description = $_GET["textArea"];
+    <br><br>
+    <form id="disp">
+        <?php
+            $firstName = $_GET["fname"];
+            $lastName = $_GET["lname"];
+            $emailAddress = $_GET["emaill"];
+            $goal = $_GET["radio"];
+            $description = $_GET["textArea"];
 
-        echo '<br><br><form id="disp"> The Following User Was Added to Our DataBase <br>';
-        echo '<br><div id="two"> New User: ' . $firstName . ' ' . $lastName . '</div><br>';
-        echo '<div id="two"> Email Address: ' . $emailAddress . '</div><br>';
-        echo '<div id="two"> Main Goal: ' . $goal . '</div><br>';
-        echo '<div id="two">Description: ' . $description . '<br></div> <br></form><br>';
-    ?>
+            echo 'The Following User Was Added to Our DataBase <br>';
+            echo '<br><div id="two"> New User: ' . $firstName . ' ' . $lastName . '</div><br>';
+            echo '<div id="two"> Email Address: ' . $emailAddress . '</div><br>';
+            echo '<div id="two"> Main Goal: ' . $goal . '</div><br>';
+            echo '<div id="two">Description: ' . $description . '<br></div> <br></form><br>';
+        ?>
+    </form>
+    </div>
 </body>
 </html>
