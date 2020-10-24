@@ -44,24 +44,30 @@
             $emaillAddress = $_GET["emaill"];
             $goall = $_GET["radio"];
             $descriptionn = $_GET["textArea"];
+            if($fName != ""){
 
-            echo 'The Following User Was Added to Our DataBase <br>';
-            echo '<br><div id="two"> New User: ' . $fName . ' ' . $lName . '</div><br>';
-            echo '<div id="two"> Email Address: ' . $emaillAddress . '</div><br>';
-            echo '<div id="two"> Main Goal: ' . $goall . '</div><br>';
-            echo '<div id="two">Description: ' . $descriptionn . '<br></div> <br></form><br>';
+                echo 'The Following User Was Added to Our DataBase <br>';
+                echo '<br><div id="two"> New User: ' . $fName . ' ' . $lName . '</div><br>';
+                echo '<div id="two"> Email Address: ' . $emaillAddress . '</div><br>';
+                echo '<div id="two"> Main Goal: ' . $goall . '</div><br>';
+                echo '<div id="two">Description: ' . $descriptionn . '<br></div> <br></form><br>';
 
-            try 
-            {
-                $statement = $db->prepare("INSERT INTO theuser(user_id, firstname, lastname, emailaddress)
-                                           VALUES(11, '$fName', '$lName', '$emaillAddress');");
-                $statement->execute();
-                
-            } 
-            catch (Exception $ex) 
-            {
-                echo "$ex";
+                $newId = $pdo->lastInsertId('sequence_name');
+                try 
+                {
+                    $statement = $db->prepare("INSERT INTO theuser(user_id, firstname, lastname, emailaddress)
+                                            VALUES(11, '$fName', '$lName', '$emaillAddress');");
+                    $statement->execute();
+                    
+                } 
+                catch (Exception $ex) 
+                {
+                    echo "$ex";
+                }
+
             }
+
+            
         ?>
     </form>
     </div>
