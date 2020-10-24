@@ -22,7 +22,7 @@
         <br>
         <div id="two">Enter First Name: <input type="text" name="fname" placeholder="James" required></div><br>
         <div id="two">Enter Last Name: <input type="text" name="lname" placeholder="Bond" require></div><br>
-        <div id="two">Enter Email Address: <input type="email" name="emaill" placeholder="007@example.com' require></div><br>
+        <div id="two">Enter Email Address: <input type="email" name="emaill" placeholder="007@example.com" require></div><br>
         <div id="two">Choose your goal: <input type="radio" name="radio" id="Cutting"> Cutting
                           <input type="radio" name="radio" id="Maintaining"> Maintaining
                           <input type="radio" name="radio" id="Bulking"> Bulking</div><br>
