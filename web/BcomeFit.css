@@ -52,12 +52,12 @@ form{
     margin: 1%;
 }
 button{
-    width: 70%;
+    width: 30%;
     font-size: large;
-    border-radius: 10%;
+    border-radius: 25%;
     justify-content: center;
     text-align: center;
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 35%;
+    margin-right: 35%;
     background-color: rgb(230, 230, 230);
 }
