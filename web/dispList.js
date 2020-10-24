@@ -20,3 +20,14 @@ function hiding() {
     
 
   }
+
+  function checkBox(){
+    let cut = document.getElementById("Cutting").checked;
+    let maintain = document.getElementById("Maintaining").checked;
+    let bulk = document.getElementById("Bulking").checked;
+
+    if(cut == true){
+      maintain == false;
+    }
+
+  }
