@@ -53,7 +53,7 @@
 
             try 
             {
-                $statement = $db->prepare('INSERT INTO note(user_id, firstname, lastname, emailaddress)
+                $statement = $db->prepare('INSERT INTO theuser(user_id, firstname, lastname, emailaddress)
                                 VALUES(11, $firstName, $last_name, $emailAddress);');
                 $statement->execute();
                 
