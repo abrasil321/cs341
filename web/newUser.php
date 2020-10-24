@@ -39,22 +39,22 @@
     <br><br>
     <form id="disp">
         <?php
-            $firstName = $_GET["fname"];
-            $lastName = $_GET["lname"];
-            $emailAddress = $_GET["emaill"];
-            $goal = $_GET["radio"];
-            $description = $_GET["textArea"];
+            $fName = $_GET["fname"];
+            $lName = $_GET["lname"];
+            $emaillAddress = $_GET["emaill"];
+            $goall = $_GET["radio"];
+            $descriptionn = $_GET["textArea"];
 
             echo 'The Following User Was Added to Our DataBase <br>';
-            echo '<br><div id="two"> New User: ' . $firstName . ' ' . $lastName . '</div><br>';
-            echo '<div id="two"> Email Address: ' . $emailAddress . '</div><br>';
-            echo '<div id="two"> Main Goal: ' . $goal . '</div><br>';
-            echo '<div id="two">Description: ' . $description . '<br></div> <br></form><br>';
+            echo '<br><div id="two"> New User: ' . $fName . ' ' . $lName . '</div><br>';
+            echo '<div id="two"> Email Address: ' . $emaillAddress . '</div><br>';
+            echo '<div id="two"> Main Goal: ' . $goall . '</div><br>';
+            echo '<div id="two">Description: ' . $descriptionn . '<br></div> <br></form><br>';
 
             try 
             {
                 $statement = $db->prepare("INSERT INTO theuser(user_id, firstname, lastname, emailaddress)
-                                           VALUES(11, $firstName, $lastName, $emailAddress);");
+                                           VALUES(11, $fName, $lName, $emaillAddress);");
                 $statement->execute();
                 
             } 
