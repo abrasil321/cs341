@@ -1,7 +1,3 @@
-<?php  
-    require "dbConnect.php";
-    $db = get_db();
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +48,9 @@
                 echo '<div id="two"> Main Goal: ' . $goall . '</div><br>';
                 echo '<div id="two">Description: ' . $descriptionn . '<br></div> <br></form><br>';
 
-                $newId = $pdo->lastInsertId('sequence_name');
+                require "dbConnect.php";
+                $db = get_db();
+
                 try 
                 {
                     $statement = $db->prepare("INSERT INTO theuser(user_id, firstname, lastname, emailaddress)
