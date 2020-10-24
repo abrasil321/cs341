@@ -19,9 +19,9 @@
         Enter First Name: <input type="text" name="fname" required><br>
         Enter Last Name: <input type="text" name="lname" require><br>
         Enter Email Address: <input type="email" name="emaill" require><br>
-        Choose your goal: <input type="checkbox" name="Cutting" id="Cutting" onchange="checkBox()">Cutting
-                          <input type="checkbox" name="Maintaining" id="Maintaining"> Maintaining
-                          <input type="checkbox" name="Bulking" id="Bulking"> Bulking<br>
+        Choose your goal: <input type="radio" name="Cutting" id="Cutting" onchange="checkBox()">Cutting
+                          <input type="radio" name="Maintaining" id="Maintaining"> Maintaining
+                          <input type="radio" name="Bulking" id="Bulking"> Bulking<br>
 
 
     </form>
