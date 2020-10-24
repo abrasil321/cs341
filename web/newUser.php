@@ -23,7 +23,7 @@
         <div id="two">Enter First Name: <input type="text" name="fname" required></div><br>
         <div id="two">Enter Last Name: <input type="text" name="lname" require></div><br>
         <div id="two">Enter Email Address: <input type="email" name="emaill" require></div><br>
-        <div id="two">Choose your goal: <input type="radio" name="radio" id="Cutting" onchange="checkBox()">Cutting
+        <div id="two">Choose your goal: <input type="radio" name="radio" id="Cutting" onchange="checkBox()"> Cutting
                           <input type="radio" name="radio" id="Maintaining"> Maintaining
                           <input type="radio" name="radio" id="Bulking"> Bulking</div><br>
                           <br>
