@@ -60,3 +60,7 @@ button{
     margin-right: 35%;
     background-color: rgb(230, 230, 230);
 }
+textarea{
+    width: 10%;
+    height: 7%;
+}
