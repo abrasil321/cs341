@@ -1,3 +1,7 @@
+<?php  
+    require "dbConnect.php";
+    $db = get_db();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,10 +19,21 @@
     <div id="head">
         Making your dream body become true
     </div>
-    <form method="$_POST" action="newUser_confirm.php">
+    <?php
+        $firstName = $_POST["fname"];
+        $lastName = $_POST["lname"];
+        $emailAddress = $_POST["emaill"];
+        $goal = $_POST["radio"];
+        $description = $_POST["textArea"];
+
+        echo $firstName . "<br>";
+        echo $lastName . "<br>";
+        echo $emailAddress . "<br>";
+        echo $goal . "<br>";
+        echo $description . "<br>";
 
 
+    ?>
 
-    </form>
 </body>
 </html>
