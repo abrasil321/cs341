@@ -18,7 +18,7 @@
     <br>
     <br>
     <div id="mess">Please Complete The Form Bellow</div>
-    <form action="newUser.php" method="$_POST">
+    <form action="newUser.php" method="$_GET">
         <br>
         <div id="two">Enter First Name: <input type="text" name="fname" placeholder="James" required></div><br>
         <div id="two">Enter Last Name: <input type="text" name="lname" placeholder="Bond" require></div><br>
@@ -33,17 +33,17 @@
         <br>
     </form>
     <?php
-        $firstName = $_POST["fname"];
-        $lastName = $_POST["lname"];
-        $emailAddress = $_POST["emaill"];
-        $goal = $_POST["radio"];
-        $description = $_POST["textArea"];
+        $firstName = $_GET["fname"];
+        $lastName = $_GET["lname"];
+        $emailAddress = $_GET["emaill"];
+        $goal = $_GET["radio"];
+        $description = $_GET["textArea"];
 
-        echo $firstName . "<br>";
-        echo $lastName . "<br>";
-        echo $emailAddress . "<br>";
-        echo $goal . "<br>";
-        echo $description . "<br>";
+        echo $firstName;
+        echo $lastName;
+        echo $emailAddress;
+        echo $goal;
+        echo $description;
     ?>
 </body>
 </html>
