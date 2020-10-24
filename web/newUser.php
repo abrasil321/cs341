@@ -53,8 +53,8 @@
 
             try 
             {
-                $statement = $db->prepare('Insert Into note(user_id, firstname, lastname, emailaddress)
-                                value(serial, $firstName, $last_name, $emailAddress)');
+                $statement = $db->prepare('INSERT INTO note(user_id, firstname, lastname, emailaddress)
+                                VALUES(serial, $firstName, $last_name, $emailAddress)');
                 $statement->execute();
                 
             } 
