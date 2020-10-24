@@ -27,3 +27,18 @@ header{
     margin-right: 10% 
     
 }
+#one{
+    background-color: gray ;
+}
+#two{
+    background-color: rgb(224, 222, 222);
+}
+form{
+    width: 70%;
+    margin-left: auto;
+    margin-left: auto;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
