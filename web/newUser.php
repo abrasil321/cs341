@@ -19,8 +19,8 @@
         Enter First Name: <input type="text" name="fname" required><br>
         Enter Last Name: <input type="text" name="lname" require><br>
         Enter Email Address: <input type="email" name="emaill" require><br>
-        Choose your goal: <input type="checkbox" name="Cutting">Cutting<br>
-                          <input type="checkbox" name="Maintaining"> Maintaining<br>
+        Choose your goal: <input type="checkbox" name="Cutting">Cutting
+                          <input type="checkbox" name="Maintaining"> Maintaining
                           <input type="checkbox" name="Bulking"> Bulking<br>
 
 
