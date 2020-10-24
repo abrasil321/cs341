@@ -27,7 +27,7 @@ function hiding() {
     let bulk = document.getElementById("Bulking").checked;
 
     if(cut == true){
-      maintain = false;
+      document.getElementById("Maintaining").innerHTML = false;
     }
 
   }
