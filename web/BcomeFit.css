@@ -48,13 +48,13 @@ form{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    font-size: 120%;
+    font-size: 140%;
     margin: 1%;
 }
 button{
     width: 30%;
     font-size: large;
-    border-radius: 25%;
+    border-radius: 25% 25% 25% 25%;
     justify-content: center;
     text-align: center;
     margin-left: 35%;
