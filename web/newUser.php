@@ -1,3 +1,7 @@
+<?php  
+    require "dbConnect.php";
+    $db = get_db();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,6 +50,18 @@
             echo '<div id="two"> Email Address: ' . $emailAddress . '</div><br>';
             echo '<div id="two"> Main Goal: ' . $goal . '</div><br>';
             echo '<div id="two">Description: ' . $description . '<br></div> <br></form><br>';
+
+            try 
+            {
+                $statement = $db->prepare('Insert Into note(user_id, firstname, lastname, emailaddress)
+                                value(serial, $firstName, $last_name, $emailAddress)');
+                $statement->execute();
+                
+            } 
+            catch (Exception $ex) 
+            {
+                echo "$ex";
+            }
         ?>
     </form>
     </div>

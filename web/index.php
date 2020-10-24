@@ -43,29 +43,23 @@
                     $first_name = $row['firstname'];
                     $last_name = $row['lastname'];
 
-                    // $_SESSION["user_id"] = $user_id;
-                    // $_SESSION["first_name"] = $first_name;
-                    // $_SESSION["last_name"] = $last_name;
-                    
-                    
-
                     $ids = array();
                     //array_push($ids[$i], $user_id);
                     array_splice($ids, $i, 0, $user_id);
-                    print_r($ids);
-                    echo "<br>";
+                    // print_r($ids);
+                    // echo "<br>";
 
                     $fnames = array();
                     //array_push($fnames[$i], $_SESSION["first_name"]);
                     array_splice($fnames, $i, 0, $first_name);
-                    print_r($fnames);
-                    echo "<br>";
+                    // print_r($fnames);
+                    // echo "<br>";
 
                     $lnames = array();
                     //array_push($lnames[$i], $_SESSION["last_name"]);
                     array_splice($lnames, $i, 0, $last_name);
-                    print_r($lnames);
-                    echo "<br>";
+                    // print_r($lnames);
+                    // echo "<br>";
 
                     $i += 1;
                 }
