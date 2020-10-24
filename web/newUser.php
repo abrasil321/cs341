@@ -26,7 +26,7 @@
         <div id="two">Choose your goal: <input type="radio" name="radio" id="Cutting"> Cutting
                           <input type="radio" name="radio" id="Maintaining"> Maintaining
                           <input type="radio" name="radio" id="Bulking"> Bulking</div><br>
-        <div id="two">Description: <textarea name="textArea" name="textArea" placeholder="Describe your personal"></textarea>
+        <div id="two">Description: <textarea name="textArea" name="textArea" placeholder="Describe your personal"></textarea></div>
         <br>
         <br>
         <button type="submit">Submit</button>
