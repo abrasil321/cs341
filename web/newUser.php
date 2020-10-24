@@ -18,7 +18,7 @@
     <br>
     <br>
     <div id="mess">Please Complete The Form Bellow</div>
-    <form action="newUser.php" method="$_GET">
+    <form action="newUser.php" method="$_GET" id="disp1">
         <br>
         <div id="two">Enter First Name: <input type="text" name="fname" placeholder="James" required></div><br>
         <div id="two">Enter Last Name: <input type="text" name="lname" placeholder="Bond" require></div><br>
@@ -43,7 +43,7 @@
         echo '<br><div id="two"> New User: ' . $firstName . ' ' . $lastName . '</div><br>';
         echo '<div id="two"> Email Address: ' . $emailAddress . '</div><br>';
         echo '<div id="two"> Main Goal: ' . $goal . '</div><br>';
-        echo '<div id="two">Description: ' . $description . '<br></div> </form>';
+        echo '<div id="two">Description: ' . $description . '<br></div> <br></form><br>';
     ?>
 </body>
 </html>
