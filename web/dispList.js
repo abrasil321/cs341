@@ -10,3 +10,10 @@ function hiding() {
     }
 }
 
+function confirming(){
+
+  return confirm("This User will be deleted permanently!");
+}
+
+
+

@@ -1,7 +1,7 @@
 table{
     width: 99%;
     background-color: rgb(230, 227, 227);
-    display: flexbox;
+    display: flex;
     align-items: center;
     justify-content: start;
 }
@@ -14,6 +14,7 @@ header{
     justify-content: center;
     font-family: cursive;
     text-align: center;
+    background-color: #ffffff99;
     
 }
 #head{
@@ -63,16 +64,41 @@ header{
     font-size: 140%;
     margin: 1%;
 }
-button{
-    width: 30%;
-    font-size: large;
-    justify-content: center;
-    text-align: center;
-    margin-left: 35%;
-    margin-right: 35%;
-    background-color: rgb(230, 230, 230);
-}
 textarea{
     width: 10%;
     height: 15%;
+}
+#mainpg{
+    background-image: url('mainBkgd.png');
+    background-repeat: no-repeat;
+    width: 99%;
+    height: auto;
+}
+#butoes{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    background-color: #00000099;
+}
+.imagem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10%;
+    margin: 2%;
+    background-color: #ffffff80;
+}
+#delete, #new, #search{
+    height: 50%;
+}
+#bt{
+    width: 80%;
+}
+#bt:hover{
+    font-weight: bolder;
+}
+form{
+    background-color: #00000099;
 }

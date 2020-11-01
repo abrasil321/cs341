@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BcomeFit - New User</title>
     <link rel="stylesheet" href="BcomeFit.css">
     <script src="dispList.js"></script>
 </head>
@@ -42,12 +42,6 @@
             $descriptionn = $_GET["textArea"];
             if($fName != ""){
 
-                echo 'The Following User Was Added to Our DataBase <br>';
-                echo '<br><div id="two"> New User: ' . $fName . ' ' . $lName . '</div><br>';
-                echo '<div id="two"> Email Address: ' . $emaillAddress . '</div><br>';
-                echo '<div id="two"> Main Goal: ' . $goall . '</div><br>';
-                echo '<div id="two">Description: ' . $descriptionn . '<br></div> <br></form><br>';
-
                 require "dbConnect.php";
                 $db = get_db();
 
@@ -56,7 +50,20 @@
                     $statement = $db->prepare("INSERT INTO theuser(user_id, firstname, lastname, emailaddress)
                                             VALUES(DEFAULT, '$fName', '$lName', '$emaillAddress');");
                     $statement->execute(); 
-                    
+
+                    $statement = $db->prepare("SELECT user_id FROM theuser WHERE emailaddress='$emaillAddress';");
+                    $statement->execute();
+                    while ($row = $statement->fetch(PDO::FETCH_ASSOC)){
+                        $user_id = $row['user_id'];
+                        
+                        echo 'The Following User Was Added to Our DataBase <br>';
+                        echo '<br><div id="two"> New User: ' . $fName . ' ' . $lName . '</div><br>';
+                        echo '<div id="two"> Email Address: ' . $emaillAddress . '</div><br>';
+                        echo '<div id="two"> Main Goal: ' . $goall . '</div><br>';
+                        echo '<div id="two">Description: ' . $descriptionn . '<br></div><br>';
+                        echo '<div id="two">ID: <span style="color:Red;">' . $user_id . '</span><br></div><br></form><br>';
+                        
+                    }
                 } 
                 catch (Exception $ex) 
                 {
@@ -64,8 +71,6 @@
                 }
 
             }
-
-            
         ?>
     </form>
     </div>

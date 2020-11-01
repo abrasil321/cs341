@@ -7,7 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>BcomeFit - Search User</title>
     <link rel="stylesheet" href="BcomeFit.css">
     <script src="dispList.js"></script>
 </head>
@@ -23,13 +23,14 @@
         User's ID:<input placeholder="00000" type="number" id="id"><br>
         Use's First Name:<input placeholder="James" type="text" id="fName"><br>
         Use's Last Name:<input placeholder="Bond" type="text" id="lName"><br>
+    <button type="submit">Search</button>
     <button id="bt" type="button" onclick="hiding()">Display All Users</button>
     <div id="list" hidden>
         <?php
             require "list.php";
         ?>                    
     </div>
-    <div id="search">
+    <div>
         <?php
             try 
             {
