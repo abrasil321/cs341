@@ -1,0 +1,22 @@
+header{
+    background-color: rgb(76, 76, 236);
+    color: white;
+    margin: 0%;
+    padding: 1%;
+}
+body{
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+}
+form{
+    justify-content: center;
+    text-align: center;
+}
+mark{
+    color: rgb(0, 182, 0);
+}
+img{
+    width: 15%;
+    height: 15%;
+}
