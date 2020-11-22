@@ -1,0 +1,119 @@
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+body{
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.flex_container{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    text-align: center;
+    background-image: url("bk.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 99%;
+}
+.signcont{
+    width: 40%;
+    margin-left: 28%;
+    margin-right: 28%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 5px 10px 18px #969595;
+    padding: 3%;
+    border-radius: 5%;
+    
+}
+.searchart{
+    width: 80%;
+    margin-left: 7%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 5px 10px 18px #969595;
+    padding: 3%;
+    border-radius: 5%;
+    
+}
+.sign, .search{
+    width: 15%;
+    height: 400px;
+    margin: 2%;
+    padding: 1%;
+    padding-top: 3%;
+    background-image: linear-gradient(to bottom, #ffffff60, #ffffff);
+    border-radius: 10%;
+    color: rgb(0, 0, 255);
+    font-size: larger;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 5px 10px 18px #6e6e6e;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+#art{
+    color: rgb(56, 55, 55);
+}
+#link{
+    color: rgb(29, 29, 141);
+    font-weight: 900;
+    text-decoration: none;
+}
+i{
+    color:black;
+    
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: cursive;
+    margin-top: 0%;
+}
+input{
+    padding: 1%;
+    width: 50%;
+}
+#login{
+    background-color: rgb(67, 67, 224);
+    color: white;
+    width: 15%;
+    font-size: medium;
+    border: rgb(67, 67, 224);
+    border-radius: 3%;
+}
+#login:hover{
+    box-shadow: 5px 10px 18px #969595;
+}
+#sigin{
+    background-color: rgb(52, 207, 52);
+    color: white;
+    border: rgb(52, 207, 52);
+    font-size: small;
+    border-radius: 3%;
+}
+#ejs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
