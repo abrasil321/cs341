@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="home.js"></script>
     <title>Infopedia</title>
 </head>
 <body>
@@ -14,15 +13,15 @@
         <h4>The World is Here</h4>
     </header>
     <br>
-    <form action="/getprofile" method="POST">
-        <div class="signcont">
-            <input type="text" name="username" placeholder="USERNAME" required><br>
-            <input type="password" name="pass" placeholder="PASSWORD" required><br>
-            <button type="submit" id="login">Log In</button>
+    <form action="searching" method="GET">
+        <div>
+            <input style="width: 30%;" type="text" name="title" placeholder="Title" ><br>
+            <input style="width: 30%;" type="text" name="author" placeholder="Author" ><br>
+            <input style="width: 30%;" type="text" name="topic" placeholder="Topic" ><br>
+            <button style="background-color: black;" type="submit" id="login">Search</button>
             <br>
-            <button type="submit" id="sigin" ><a href="new_user">Create New Account</a></button>
         </div>
-    </form>
+    </form> 
 </body>
 <hr>
 <footer>

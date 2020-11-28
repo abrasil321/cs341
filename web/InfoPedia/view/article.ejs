@@ -14,23 +14,21 @@
         <h4>The World is Here</h4>
     </header>
     <br>
-    <form >
-        <div>
+    <form>
+        <article>
             <% JSON.stringify(results);%>
-            <h3>
-                <ul>
-                    <%  results.forEach(function(o) { %>
-                    <li>
-                        <button >
-                            <%= o.author %> 
-                        </button>
-                    </li>
-                    <% }); %>
-                </ul>
-            </h3>
-        </div>
+                <%  results.forEach(function(o) { %>
+                    <h2 style="text-align: center;"> <%= o.title%> </h2>
+                    <p id="article" style=" text-align: justify;
+                                            width: 75%;
+                                            margin-left: 12.5%;
+                                            margin-right: 12.5%;">
+                     <%= o.article %> </p>
+                <% }); %>
+        </article>
     </form>   
-    
+    <br>
+    <br>
 </body>
 <hr>
 <footer>
