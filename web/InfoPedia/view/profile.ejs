@@ -13,15 +13,46 @@
         <h4>The World is Here</h4>
     </header>
     <br>
-    <form action="searching" method="GET">
+    <div id="profi">
+       <% JSON.stringify(info); %> 
+       <% var fname = info[0].fname;%> 
+       <span id="welcome">Welcome <%= fname %> </span>
+    </div>
+    <br>
+    <button style="background-color: rgb(68, 67, 67);" type="submit" id="login">Create Article</button>
+    <form class="signcont" method="GET" action="article" style="width: 70%; margin: 5% auto 5% auto;">
         <div>
-            <input style="width: 30%;" type="text" name="title" placeholder="Title" ><br>
-            <input style="width: 30%;" type="text" name="author" placeholder="Author" ><br>
-            <input style="width: 30%;" type="text" name="topic" placeholder="Topic" ><br>
-            <button style="background-color: black;" type="submit" id="login">Search</button>
-            <br>
+            <% JSON.stringify(info);%>
+            <h3><i>Your Articles</i></h3>
+            <table>
+                <tr>
+                    <th><h4><u>Title</u></h4></th>
+                    <th><h4><u>Author</u></h4></th>
+                    <th></th>
+                </tr>
+                <%  info[1].forEach(function(o) { var title = o.title; var author = o.author; %>
+                <tr style="text-align: start;"> 
+                    <td>
+                        <button class="title1" type="submit" name=title value="<%=title %>"
+                            style="border: white ; 
+                                    background-color: white; 
+                                    font-size: small;">
+                            <p><i>"<%= title%>"</i></p>
+                        </button>     
+                    </td>
+                    <td>
+                        <%= author%>   
+                    </td>
+                    <td id="edit">
+                        <a id="link" href=""> &emsp; [Edit]</a> <a id="link" href="">[Delete]</a>
+                    </td>
+                    
+                </tr>
+                <% }); %>
+            </table>
         </div>
-    </form> 
+    </form>
+        
 </body>
 <hr>
 <footer>
