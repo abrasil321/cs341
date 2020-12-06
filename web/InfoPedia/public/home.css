@@ -127,3 +127,14 @@ button:hover{
     margin-right: 7.5%;
 
 }
+#profi{
+    text-align: start;
+}
+#welcome{
+    font-family: cursive;
+    font: bold;
+    font-size: larger;
+}
+#link{
+    color: rgb(3, 3, 170);
+}
