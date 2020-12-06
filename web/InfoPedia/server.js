@@ -1,9 +1,13 @@
 var express = require("express");
 var app = express();
 const bodyParser = require("body-parser");
+var session = require('express-session');
 var port = process.env.PORT || 5000;
+var sess = '';
+var resultado;
 
-    // DATABASE CONNECT ---------------------------------------------------------------------------
+
+    // DATABASE CONNECT --------------------------------------------------------------------------
 const { Router, json } = require('express');
 const { Pool } = require('pg');
 const pool = new Pool({
@@ -13,30 +17,27 @@ const pool = new Pool({
   }
 });
 
+
     //  USE's -------------------------------------------------------------------------------------
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(session({ secret: 'vem_monstro', resave: true, saveUninitialized: true, maxAge: Date.now() + (36 * 100 * 1000) })); 
 
     //  SET's -------------------------------------------------------------------------------------
 app.set("views", "view");
 app.set("view engine", "ejs");
 
     // ROOT ---------------------------------------------------------------------------------------
-app.get("/", function(req, res) {
-	console.log("Received a request for /");
-  res.write("this is the rooot");
-	res.end();
+app.get("/", function(req, res) {   
+
+      console.log("Received a request for /");
+      res.write("this is the root");
+      res.end();
 });
 
-   // SIGN IN -------------------------------------------------------------------------------------
-app.get("/sign", function(request, response) {
-  console.log("Received a request for /sign");
-  response.render("sign");
-  response.end();
-});
 
-    //NEW USER ------------------------------------------------------------------------------------
+    //LOGIN ------------------------------------------------------------------------------------
 app.get("/new_user", function(request, response) {
   console.log("Received a request for /new_user");
   response.render("new_user");
@@ -61,6 +62,7 @@ app.get("/search", async (req, res) => {
   res.end();
 });
 
+
    // DISPLAY An ARTICLE --------------------------------------------------------------------------
 app.get("/article", async (req, res) => {
   const title = req.query.title;
@@ -78,6 +80,7 @@ app.get("/article", async (req, res) => {
   console.log("Received a request for the article.ejs");
   res.end();
 });
+
 
     // SEARCH QUERIES -----------------------------------------------------------------------------
 app.get("/searching", async (req, res) => {
@@ -103,7 +106,8 @@ app.get("/searching", async (req, res) => {
   res.end();
 });
 
-      // NEW USER ---------------------------------------------------------------------------------
+
+      // CREATE NEW USER ---------------------------------------------------------------------------------
 app.post("/profile", async (req, res) => {
   const first = req.body.fname;
   const last = req.body.lname;
@@ -114,21 +118,59 @@ app.post("/profile", async (req, res) => {
 
   try {
     const client = await pool.connect();
-    const result = await client.query('INSERT INTO users (fname, lname, email, profession, username, password) VALUES (' + "'"  + first + "'" + ', ' + "'"  + last + "'" +', ' + "'"  + email + "'" + ','+ "'"  + prof + "'" + ',' + "'"  + user + "'" + ',' + "'"  + pass + "')");
+    const result1 = await client.query('INSERT INTO users (fname, lname, email, profession, username, password) VALUES (' + "'"  + first + "'" + ', ' + "'"  + last + "'" +', ' + "'"  + email + "'" + ','+ "'"  + prof + "'" + ',' + "'"  + user + "'" + ',' + "'"  + pass + "')");
     
-    const result2 = await client.query('SELECT fname, lname, email, profession, username FROM users');
-    const results2 = { 'results2': (result2) ? result2.rows : null};
-    //console.log(results2);
-    res.render('profile', results2 );
+    const result = await client.query('SELECT fname, lname, email, profession, username, password FROM users');
+    const results = { 'results': (result) ? result.rows : null};
+
+    const article = await client.query('SELECT DISTINCT title, author FROM articles WHERE username=' + "'" + user + "'");
+    const articles = { 'articles': (article) ? article.rows : null};
+    JSON.stringify(articles);
+    
+    //console.log(resultado);
+    JSON.stringify(results);
+    results.results.forEach(function(o) { 
+      var dbUser = o.username; 
+      var dbPass = o.password;
+      
+      //console.log(dbPass, dbUser);
+      if(user == dbUser){
+        var fname = o.fname;
+        var lname = o.lname;
+        var param = {"info":[{"fname": fname, "lname": lname}]};
+        param.info.push(articles.articles);
+
+        const info = param;
+        JSON.stringify(param);
+        resultado = info;
+        //console.log(info.info[0].fname);
+        res.render('profile', info);
+        sess = 'allowed'; 
+      }
+    })
     client.release();
   } catch (err) {
     console.error(err);
     res.send("Error " + err);
   }
+});
 
   
-  console.log("Received a request for the profile.ejs");
-  res.end();
+	
+  // SIGN IN -------------------------------------------------------------------------------------
+  app.get("/sign", function(request, response) {
+
+  console.log("Received a request for /sign");
+  if(sess == ''){
+    response.render("sign");
+    response.end();
+  }
+  else{
+    const info = resultado;
+    response.render('profile', info);
+    response.end();
+  }
+  
 });
 
 
@@ -138,29 +180,50 @@ app.post("/getprofile", async (req, res) => {
   const olduser = req.body.username; 
   const oldpass = req.body.pass; 
 
-  try {
-    const client = await pool.connect();
-    const result = await client.query('SELECT fname, lname, email, profession, username, password FROM users');
-    const results = { 'results': (result) ? result.rows : null};
-    //console.log(results);
-    JSON.stringify(results);
-    results.results.forEach(function(o) { 
-      var dbUser = o.username; 
-      var dbPass = o.password;
-      console.log(dbPass, dbUser);
-      if(oldpass == dbPass && olduser == dbUser ){
-        res.render('profile', results );
-      }
-    });
-    if((oldpass != dbPass && olduser != dbUser) || (oldpass != dbPass && olduser == dbUser) || (oldpass == dbPass && olduser != dbUser)){
-      res.send("404: You do not have permission to access this page! ");
-    }
+  if(sess != ''){
+    const info = resultado;
+    //console.log(resultado);
+    res.render('profile', info );
     client.release();
-  } catch (err) {
-    console.error(err);
-    res.send("You do not have permission to access this page! ");
   }
-  
+  else{
+    try {
+      const client = await pool.connect();
+      const result = await client.query('SELECT fname, lname, email, profession, username, password FROM users');
+      const results = { 'results': (result) ? result.rows : null};
+
+      const article = await client.query('SELECT DISTINCT title, author FROM articles WHERE username=' + "'" + olduser + "'");
+      const articles = { 'articles': (article) ? article.rows : null};
+      JSON.stringify(articles);
+      
+      //console.log(resultado);
+      JSON.stringify(results);
+      results.results.forEach(function(o) { 
+        var dbUser = o.username; 
+        var dbPass = o.password;
+        
+        //console.log(dbPass, dbUser);
+        if((oldpass == dbPass && olduser == dbUser)){
+          var fname = o.fname;
+          var lname = o.lname;
+          var param = {"info":[{"fname": fname, "lname": lname}]};
+          param.info.push(articles.articles);
+
+          const info = param;
+          JSON.stringify(param);
+          resultado = info;
+          //console.log(info.info[0].fname);
+          res.render('profile', info);
+          sess = 'allowed'; 
+        }
+      })
+      client.release();
+    } catch (err) {
+      console.error(err);
+      res.send("You do not have permission to access this page! ");
+    }
+  }
+
   console.log("Received a request for the profile.ejs");
   res.end();
 });
