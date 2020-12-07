@@ -2,6 +2,9 @@ var express = require("express");
 var app = express();
 const bodyParser = require("body-parser");
 var session = require('express-session');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const salt = bcrypt.genSaltSync(saltRounds);
 var port = process.env.PORT || 5000;
 var sess = '';
 var resultado;
@@ -114,11 +117,14 @@ app.post("/profile", async (req, res) => {
   const email = req.body.email; 
   const prof = req.body.prof; 
   const user = req.body.newusername; 
-  const pass = req.body.repassw; 
+  const password = req.body.repassw; 
+  const passHash = bcrypt.hashSync(password, salt);
+  
+  console.log(passHash);
 
   try {
     const client = await pool.connect();
-    const result1 = await client.query('INSERT INTO users (fname, lname, email, profession, username, password) VALUES (' + "'"  + first + "'" + ', ' + "'"  + last + "'" +', ' + "'"  + email + "'" + ','+ "'"  + prof + "'" + ',' + "'"  + user + "'" + ',' + "'"  + pass + "')");
+    const result1 = await client.query('INSERT INTO users (fname, lname, email, profession, username, password) VALUES (' + "'"  + first + "'" + ', ' + "'"  + last + "'" +', ' + "'"  + email + "'" + ','+ "'"  + prof + "'" + ',' + "'"  + user + "'" + ',' + "'"  + passHash + "')");
     
     const result = await client.query('SELECT fname, lname, email, profession, username, password FROM users');
     const results = { 'results': (result) ? result.rows : null};
@@ -200,10 +206,10 @@ app.post("/getprofile", async (req, res) => {
       JSON.stringify(results);
       results.results.forEach(function(o) { 
         var dbUser = o.username; 
-        var dbPass = o.password;
+        var hash = o.password;
         
         //console.log(dbPass, dbUser);
-        if((oldpass == dbPass && olduser == dbUser)){
+        if((olduser == dbUser) && (bcrypt.compareSync(oldpass, hash))){
           var fname = o.fname;
           var lname = o.lname;
           var param = {"info":[{"fname": fname, "lname": lname}]};
