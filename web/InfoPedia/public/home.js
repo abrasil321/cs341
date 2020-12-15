@@ -19,3 +19,13 @@ function test_match(){
         document.getElementById('login').disabled = false;
     }
 }
+
+function confirm_submit(){
+    confirm("Are you sure that you want to create this article ?");
+}
+function confirm_submit2(){
+    confirm("Are you sure that you want to edit this article ?");
+}
+function confirm_delete(){
+    confirm("Are you sure that you want to delete this article ?");
+}
