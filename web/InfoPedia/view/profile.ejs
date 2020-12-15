@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Infopedia  <i class="fa fa-globe" style="font-size:40px" ></i></h1>
+        <h1> <a href="/home.html" style="color:black" > Infopedia  <i class="fa fa-globe" style="font-size:40px" ></i> </a> </h1>
         <h4>The World is Here</h4>
     </header>
     <br>
@@ -19,7 +19,7 @@
        <span id="welcome">Welcome <%= fname %> </span>
     </div>
     <br>
-    <button style="background-color: rgb(68, 67, 67);" type="submit" id="login">Create Article</button>
+    <button style="background-color: rgb(68, 67, 67);" type="button" id="login"><a href="/create">Create Article</a></button>
     <form class="signcont" method="GET" action="article" style="width: 70%; margin: 5% auto 5% auto;">
         <div>
             <% JSON.stringify(info);%>
@@ -31,28 +31,30 @@
                     <th></th>
                 </tr>
                 <%  info[1].forEach(function(o) { var title = o.title; var author = o.author; %>
-                <tr style="text-align: start;"> 
-                    <td>
-                        <button class="title1" type="submit" name=title value="<%=title %>"
-                            style="border: white ; 
-                                    background-color: white; 
-                                    font-size: small;">
-                            <p><i>"<%= title%>"</i></p>
-                        </button>     
-                    </td>
-                    <td>
-                        <%= author%>   
-                    </td>
-                    <td id="edit">
-                        <a id="link" href=""> &emsp; [Edit]</a> <a id="link" href="">[Delete]</a>
-                    </td>
-                    
-                </tr>
+                    <tr style="text-align: start;"> 
+                        <td>
+                            <button class="title1" name="title" type="submit" value="<%=title %>"
+                                style="border: white ; 
+                                        background-color: white; 
+                                        font-size: small;">
+                                <p><i>"<%= title%>"</i></p>
+                            </button>     
+                        </td>
+                        <td>
+                            <%= author%>   
+                        </td>
+                    </form>
+                        <td id="edit">
+                            &emsp;
+                            <form action="/getprofile" method="POST">
+                                 <button id="link" type="submit" value="<%=title %>" name="title" onclick="confirm_delete()" >[Delete]</button>
+                            </form>    
+                        </td>
+                    </tr>
                 <% }); %>
             </table>
         </div>
-    </form>
-        
+    
 </body>
 <hr>
 <footer>

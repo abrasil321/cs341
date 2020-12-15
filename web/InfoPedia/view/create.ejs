@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="home.js"></script>
+    <title>Infopedia</title>
+</head>
+<body>
+    <header>
+        <h1> <a href="/home.html" style="color:black" > Infopedia  <i class="fa fa-globe" style="font-size:40px" ></i> </a> </h1>
+    </header>
+    <div>
+        &#171; <a href="/sign" style="color: rgb(26, 25, 25);">Go Back to Profile</a>
+    </div>
+    <br>
+    <form method="GET" action="/create">
+        <div>
+            <input style="width: 30%;" name="title" type="text" placeholder="Enter Title" required><br>
+            <input style="width: 30%;" name="topic" type="text" placeholder="Enter Topic" required><br>
+            <input style="width: 30%;" name="author" type="text" placeholder="Enter Author" required><br>
+            <input style="width: 30%;" name="ref" type="text" placeholder="Enter References" ><br>
+        </div>
+        <div class="signcont" style="width: 70%; margin: 5% auto 5% auto;">
+            Enter your Article <br><textarea rows="20" cols="120" id="texarea" name="article" type="text" placeholder="1000 Characters Max" required></textarea>
+        </div>
+        <br>
+        <br>
+        <div id="cent"></div>
+        <button id="sub" type="submit" onclick="confirm_submit()">Submit</button>
+    </form>
+    <br>
+    <br>
+</body>
+<hr>
+<footer>
+    <p>By Alex Brasil &#174</p>
+</footer>
+</html>
